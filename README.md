@@ -10,24 +10,24 @@ El objetivo de este proyecto es puramente académico. Busca demostrar el dominio
 
 ## Tecnologías utilizadas
 
-* PHP
-* HTML5
-* CSS3
-* Bootstrap 5
-* JavaScript
-* Git
-* GitHub
+- PHP
+- HTML5
+- CSS3
+- Bootstrap 5
+- JavaScript
+- Git
+- GitHub
 
 ## Funcionalidades
 
-* **Página principal:** Presentación de la tienda, categorías destacadas e información corporativa.
-* **Catálogo:** Listado completo de productos tecnológicos disponibles.
-* **Productos dinámicos:** Los datos se obtienen a través de un arreglo asociativo en PHP, renderizados con un ciclo `foreach`.
-* **Detalle de producto:** Página individual para cada producto que muestra información específica obtenida mediante parámetros `GET`.
-* **Categorías:** Visualización organizada de productos por tipo (Laptops, Celulares, etc.).
-* **Carrito simulado:** Funcionalidad implementada en JavaScript para demostrar cómo se agregarían productos al carrito, con alertas visuales.
-* **Formulario de contacto:** Formulario con validaciones básicas en el cliente.
-* **Diseño responsive:** La interfaz se adapta correctamente a computadoras, tablets y teléfonos celulares utilizando el sistema de cuadrículas de Bootstrap.
+- **Página principal:** Presentación de la tienda, categorías destacadas e información corporativa.
+- **Catálogo:** Listado completo de productos tecnológicos disponibles.
+- **Productos dinámicos:** Los datos se obtienen a través de un arreglo asociativo en PHP, renderizados con un ciclo `foreach`.
+- **Detalle de producto:** Página individual para cada producto que muestra información específica obtenida mediante parámetros `GET`.
+- **Categorías:** Visualización organizada de productos por tipo (Laptops, Celulares, etc.).
+- **Carrito simulado:** Funcionalidad implementada en JavaScript para demostrar cómo se agregarían productos al carrito, con alertas visuales.
+- **Formulario de contacto:** Formulario con validaciones básicas en el cliente.
+- **Diseño responsive:** La interfaz se adapta correctamente a computadoras, tablets y teléfonos celulares utilizando el sistema de cuadrículas de Bootstrap.
 
 ## Estructura del proyecto
 
@@ -87,18 +87,21 @@ Una vez clonado el repositorio y colocado en la carpeta `htdocs` de XAMPP, aseg�
 ## Capturas de pantalla
 
 ### Página principal
-![Página principal]()
+
+<img src="assets/img/pagina.png">
 
 ### Productos
-![Productos]()
+
+<img src="assets/img/productos.png">
 
 ### Detalle
-![Detalle]()
+
+<img src="assets/img/detalles.png">
 
 ## Enlace del proyecto
 
 [Ver aplicación publicada](#)
-*(El proyecto requiere un servicio de hosting compatible con PHP, como InfinityFree. El enlace se agregará una vez desplegado).*
+_(El proyecto requiere un servicio de hosting compatible con PHP, como InfinityFree. El enlace se agregará una vez desplegado)._
 
 ## Integrantes
 
