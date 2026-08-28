@@ -1,11 +1,19 @@
 // assets/js/script.js
 
 // Funcionalidad de carrito con localStorage
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem('carrito')) || [];
+}
+
+function guardarCarrito(carrito) {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
 
 function actualizarContadorCarrito() {
     const contador = document.getElementById('contador-carrito');
     if (contador) {
+        const carrito = obtenerCarrito();
         const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
         contador.innerText = totalItems;
     }
@@ -14,7 +22,7 @@ function actualizarContadorCarrito() {
 document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
 
 function agregarCarrito(nombre, id, precio, imagen) {
-    // Si estamos en la página de detalle, intentamos obtener la cantidad
+    let carrito = obtenerCarrito();
     let cantidadInput = document.getElementById('cantidad-producto-' + id);
     let cantidadAAgregar = cantidadInput ? parseInt(cantidadInput.value) : 1;
 
@@ -31,7 +39,7 @@ function agregarCarrito(nombre, id, precio, imagen) {
         });
     }
     
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    guardarCarrito(carrito);
     actualizarContadorCarrito();
     
     // Animación pequeña en el botón
@@ -52,7 +60,6 @@ function agregarCarrito(nombre, id, precio, imagen) {
 }
 
 function vaciarCarrito() {
-    carrito = [];
     localStorage.removeItem('carrito');
     actualizarContadorCarrito();
     if(typeof renderizarCarrito === 'function') {
