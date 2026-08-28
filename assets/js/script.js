@@ -1,11 +1,38 @@
 // assets/js/script.js
 
-// Funcionalidad de carrito simulado
-let carritoCount = 0;
+// Funcionalidad de carrito con localStorage
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-function agregarCarrito(nombre, id) {
-    carritoCount++;
-    document.getElementById('contador-carrito').innerText = carritoCount;
+function actualizarContadorCarrito() {
+    const contador = document.getElementById('contador-carrito');
+    if (contador) {
+        const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+        contador.innerText = totalItems;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", actualizarContadorCarrito);
+
+function agregarCarrito(nombre, id, precio, imagen) {
+    // Si estamos en la página de detalle, intentamos obtener la cantidad
+    let cantidadInput = document.getElementById('cantidad-producto-' + id);
+    let cantidadAAgregar = cantidadInput ? parseInt(cantidadInput.value) : 1;
+
+    const productoExistente = carrito.find(item => item.id === id);
+    if (productoExistente) {
+        productoExistente.cantidad += cantidadAAgregar;
+    } else {
+        carrito.push({
+            id: id,
+            nombre: nombre,
+            precio: parseFloat(precio),
+            imagen: imagen,
+            cantidad: cantidadAAgregar
+        });
+    }
+    
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarContadorCarrito();
     
     // Animación pequeña en el botón
     const btn = document.getElementById('btn-add-' + id);
@@ -24,11 +51,12 @@ function agregarCarrito(nombre, id) {
     alert("¡Producto agregado con éxito!\n\nSe ha añadido: " + nombre + " al carrito.");
 }
 
-function verCarrito() {
-    if(carritoCount === 0) {
-        alert("Tu carrito está vacío. ¡Agrega algunos productos!");
-    } else {
-        alert("Tienes " + carritoCount + " producto(s) en tu carrito.\n\n(Esto es una demostración, no se procesarán pagos reales).");
+function vaciarCarrito() {
+    carrito = [];
+    localStorage.removeItem('carrito');
+    actualizarContadorCarrito();
+    if(typeof renderizarCarrito === 'function') {
+        renderizarCarrito();
     }
 }
 
