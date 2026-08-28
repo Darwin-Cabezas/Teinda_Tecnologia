@@ -89,7 +89,7 @@
                             <p class="price-tag mt-auto mb-3">$<?php echo number_format($producto['precio'], 2); ?></p>
                             <div class="d-grid gap-2">
                                 <a href="detalle.php?id=<?php echo $producto['id']; ?>" class="btn btn-outline-primary">Ver Detalle</a>
-                                <button type="button" id="btn-add-<?php echo $producto['id']; ?>" class="btn btn-accent" onclick="agregarCarrito('<?php echo addslashes($producto['nombre']); ?>', <?php echo $producto['id']; ?>)">
+                                <button type="button" id="btn-add-<?php echo $producto['id']; ?>" class="btn btn-accent" onclick="agregarCarrito('<?php echo addslashes($producto['nombre']); ?>', <?php echo $producto['id']; ?>, <?php echo $producto['precio']; ?>, '<?php echo htmlspecialchars($producto['imagen']); ?>')">
                                     <i class="fa-solid fa-cart-plus me-1"></i> Agregar
                                 </button>
                             </div>

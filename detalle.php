@@ -52,10 +52,10 @@ if ($id_producto > 0) {
                 <div class="d-flex gap-3 mb-4">
                     <div class="input-group" style="width: 130px;">
                         <button class="btn btn-outline-secondary" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                        <input type="number" class="form-control text-center" value="1" min="1" max="10">
+                        <input type="number" class="form-control text-center" value="1" min="1" max="10" id="cantidad-producto-<?php echo $producto_encontrado['id']; ?>">
                         <button class="btn btn-outline-secondary" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
                     </div>
-                    <button type="button" id="btn-add-<?php echo $producto_encontrado['id']; ?>" class="btn btn-accent flex-grow-1" onclick="agregarCarrito('<?php echo addslashes($producto_encontrado['nombre']); ?>', <?php echo $producto_encontrado['id']; ?>)">
+                    <button type="button" id="btn-add-<?php echo $producto_encontrado['id']; ?>" class="btn btn-accent flex-grow-1" onclick="agregarCarrito('<?php echo addslashes($producto_encontrado['nombre']); ?>', <?php echo $producto_encontrado['id']; ?>, <?php echo $producto_encontrado['precio']; ?>, '<?php echo htmlspecialchars($producto_encontrado['imagen']); ?>')">
                         <i class="fa-solid fa-cart-shopping me-2"></i> Agregar al Carrito
                     </button>
                 </div>
