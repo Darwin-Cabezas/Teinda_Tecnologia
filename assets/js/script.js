@@ -54,9 +54,6 @@ function agregarCarrito(nombre, id, precio, imagen) {
             btn.classList.replace('btn-success', 'btn-accent');
         }, 2000);
     }
-    
-    // Mostrar alerta (simulación sencilla)
-    alert("¡Producto agregado con éxito!\n\nSe ha añadido: " + nombre + " al carrito.");
 }
 
 function vaciarCarrito() {
@@ -99,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const correo = document.getElementById("correo").value;
             
             if(nombre.trim() === "" || correo.trim() === "") {
-                alert("Por favor, completa los campos requeridos.");
                 return;
             }
             
