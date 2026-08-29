@@ -100,8 +100,7 @@ Una vez clonado el repositorio y colocado en la carpeta `htdocs` de XAMPP, aseg�
 
 ## Enlace del proyecto
 
-[Ver aplicación publicada](#)
-_(El proyecto requiere un servicio de hosting compatible con PHP, como InfinityFree. El enlace se agregará una vez desplegado)._
+https://tiendatecnologica.page.gd/
 
 ## Integrantes
 
